@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RecordService } from '../service/record.service';
 
 @Component({
@@ -95,8 +95,8 @@ export class GraphComponent implements OnInit {
     if (this.inputdata.length > this.week - 10){
       return;
     }
-    this.inputdata.push(Number(this.weight));
     this.weeks.push(Number(this.week));
+    this.inputdata.push(Number(this.weight));
     if (this.begining){
       this.lineChartData.push({ data: this.inputdata, label: 'Datos del usuario', spanGaps: true});
       this.begining = false;
@@ -130,18 +130,17 @@ export class GraphComponent implements OnInit {
         this.repos = response;
         this.inputdata = this.repos[0].weight;
         this.inputdata = [].concat.apply([], this.inputdata);
+        this.weeks = this.repos[0].week;
+        this.weeks = [].concat.apply([], this.weeks);
         this.lineChartData.push({ data: this.inputdata, label: 'Datos del usuario', spanGaps: true});
         this.begining = false;
         this.exist = true;
-      },
-      (error) => {                              // error() callback
-        console.error('Request failed with error');
       });
   }
 
   saveData() {
     if (this.exist){
-      this.recordService.updateRecord(this.idUser, this.weeks, this.preWeight, this.inputdata).subscribe(data => {
+      this.recordService.updateRecord(this.weeks, this.inputdata).subscribe(data => {
         this.postId = data.id;
       });
     }
