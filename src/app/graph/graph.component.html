@@ -1,0 +1,104 @@
+<body class="body">
+
+  <div *ngIf="isSelected; else elseBlock" class="inputdata">
+  <!-- Default auto-sizing form -->
+  <h3></h3>
+  <h3>Ingrese los datos de peso aqui</h3>
+  <form>
+    <!-- Grid row -->
+    <div class="form-row align-items-center">
+      <!-- Grid column -->
+      <div class="col-auto">
+        <!-- Default input -->
+        <label class="sr-only" for="inlineFormInput">Semana</label>
+        <input mdbInput type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Semana" [(ngModel)]="week" [ngModelOptions]="{standalone: true}">
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-auto">
+        <!-- Default input -->
+        <label class="sr-only" for="weight">Peso</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">Kg</div>
+          </div>
+          <input mdbInput type="text" class="form-control py-0" id="weight" placeholder="Peso" [(ngModel)]="weight" [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-auto">
+        <button type="submit" mdbBtn color="primary" class="mt-0" (click)="addData()">Añadir</button>
+      </div>
+
+      <div class="col-auto">
+        <button type="submit" mdbBtn color="primary" class="mt-0" (click)="saveData()">Guardar</button>
+      </div>
+    </div>
+    <!-- Grid row -->
+  </form>
+  <!-- Default auto-sizing form -->
+</div>
+
+  <ng-template #elseBlock>
+  <div class="inputdata">
+    <!-- Default auto-sizing form -->
+    <h3></h3>
+    <h3>Ingrese la identificacion del usuario y si es nuevo su peso pregestacional</h3>
+    <form>
+      <!-- Grid row -->
+      <div class="form-row align-items-center">
+        <!-- Grid column -->
+        <div class="col-auto">
+          <!-- Default input -->
+          <label class="sr-only" for="inlineFormInput">idUser</label>
+          <input mdbInput type="text" class="form-control mb-2" id="idUser" placeholder="Identificacion" [(ngModel)]="idUser" [ngModelOptions]="{standalone: true}">
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-auto">
+          <!-- Default input -->
+          <label class="sr-only" for="pregestationalWeight">Peso Pregestacional</label>
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">Kg</div>
+            </div>
+            <input mdbInput type="text" class="form-control py-0" id="pregestationalWeight" placeholder="Peso Pregestacional" [(ngModel)]="preWeight" [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-auto">
+          <button type="submit" mdbBtn color="primary" class="mt-0" (click)="getData()">Enviar</button>
+        </div>
+      </div>
+      <!-- Grid row -->
+    </form>
+    <!-- Default auto-sizing form -->
+  </div>
+  </ng-template>
+
+
+  <div class="graphdiv">
+    <div class="row">
+      <div class="col-md-6">
+        <div style="display: block; width: 1000px; height: 1000px;">
+          <canvas baseChart
+                  [datasets]="lineChartData"
+                  [labels]="lineChartLabels"
+                  [options]="lineChartOptions"
+                  [colors]="lineChartColors"
+                  [legend]="lineChartLegend"
+                  [chartType]="lineChartType"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
