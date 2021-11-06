@@ -9,7 +9,7 @@ export class UserService {
   serverPrefix: string;
 
   constructor(private http: HttpClient) {
-    this.serverPrefix = 'http://localhost:3000';
+    this.serverPrefix = 'http://api-rest-curva.herokuapp.com';
   }
 
   login(user: User) {
