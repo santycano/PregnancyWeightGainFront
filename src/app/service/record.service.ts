@@ -10,7 +10,7 @@ export class RecordService {
 
   private userData = JSON.parse(localStorage.getItem('currentUser'));
   private recordData = JSON.parse(localStorage.getItem('currentRecord'));
-  private url = 'http://api-rest-curva.herokuapp.com/api/record';
+  private url = 'https://api-rest-curva.herokuapp.com/api/record';
 
   addRecord(idUser: any, weeks: Array<any>, preWeight: any, inputdata: Array<any>){
     const headers = { 'x-auth-token': this.userData[1] };
