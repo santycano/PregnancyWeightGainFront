@@ -1,16 +1,8 @@
-//Install express server
 const express = require('express');
 const path = require('path');
-
-const app = express();
-
-// Serve only the static files form the dist directory
-// Replace the '/dist/<to_your_project_name>'
-app.use(express.static(__dirname + '/dist/PregnancyWeightGain'));
-
-app.get('*', function(req,res) {
-  // Replace the '/dist/<to_your_project_name>/index.html'
-  res.sendFile(path.join(__dirname + '/dist/PregnancyWeightGain/index.html'));
+const ngApp = express();
+ngApp.use(express.static('./dist/PregnancyWeightGain'));
+ngApp.get('/*', function (request, response) {
+  response.sendFile(path.join(__dirname, '/dist/PregnancyWeightGain/index.html'));
 });
-// Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 8080);
+ngApp.listen(process.env.PORT || 8080);
