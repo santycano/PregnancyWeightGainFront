@@ -96,7 +96,7 @@ export class GraphComponent implements OnInit {
       return;
     }
     this.weeks.push(Number(this.week));
-    this.inputdata.push(Number(this.weight));
+    this.inputdata.push(Number(this.weight) - this.preWeight);
     if (this.begining){
       this.lineChartData.push({ data: this.inputdata, label: 'Datos del usuario', spanGaps: true});
       this.begining = false;
@@ -131,6 +131,8 @@ export class GraphComponent implements OnInit {
         this.inputdata = this.repos[0].weight;
         this.inputdata = [].concat.apply([], this.inputdata);
         this.weeks = this.repos[0].week;
+        console.log(this.repos[0].pregestationalWeight.$numberDecimal);
+        this.preWeight = Number(this.repos[0].pregestationalWeight.$numberDecimal);
         this.weeks = [].concat.apply([], this.weeks);
         this.lineChartData.push({ data: this.inputdata, label: 'Datos del usuario', spanGaps: true});
         this.begining = false;

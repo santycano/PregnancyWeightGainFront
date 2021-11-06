@@ -4,7 +4,7 @@
 .inputdata{
   text-align: center;
   position: absolute;
-  left: 30%;
+  left: 25%;
   margin-right: -50%;
 }
 .graphdiv{
@@ -12,4 +12,12 @@
   top: 25%;
   left: 15%;
   margin-right: -50%;
+}
+
+.modal-content{
+  text-align: center;
+}
+
+.modal-body{
+  align-content: center;
 }
