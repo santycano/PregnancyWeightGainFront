@@ -1,14 +1,97 @@
-.container{
-  text-align: center;
-  margin: 0;
-  position: absolute;
-  top: 62%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%)
+html,
+body,
+header,
+.jarallax {
+  height: 700px;
 }
 
-img {
-  width: 100%;
-  height: auto;
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .jarallax {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body,
+  header,
+  .jarallax {
+    height: 100vh;
+  }
+}
+
+@media (min-width: 560px) and (max-width: 650px) {
+  header .jarallax h1 {
+    margin-bottom: .5rem !important;
+  }
+  header .jarallax h5 {
+    margin-bottom: .5rem !important;
+  }
+}
+
+
+@media (min-width: 660px) and (max-width: 700px) {
+  header .jarallax h1 {
+    margin-bottom: 1.5rem !important;
+  }
+  header .jarallax h5 {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+.top-nav-collapse {
+  background-color: #9da4b1 !important;
+}
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+@media (max-width: 768px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #9da4b1 !important;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 850px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #9da4b1!important;
+  }
+}
+
+footer.page-footer {
+  background-color: #9da4b1;
+}
+
+.file-upload-button {
+  background-color: #ff5252;
+  border-radius: 50%;
+  height: 3rem;
+  overflow: hidden;
+  position: relative;
+  width: 3rem;
+  margin-top: 5%;
+  margin-left: 25%;
+
+  &::after {
+    content: '⇪';
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  input[type="file"] {
+    font-size: 100px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.file-info {
+  color: #999;
+  font-family: Lato;
+  margin-left: 0.5rem;
 }

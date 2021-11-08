@@ -1,5 +1,4 @@
 
-
 <div mdbModal #basicModal="mdbModal" [config]="{ show: true, backdrop: 'static',  keyboard: false }" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -50,7 +49,7 @@
       <div class="col-auto">
         <!-- Default input -->
         <label class="sr-only" for="inlineFormInput">Semana</label>
-        <input mdbInput type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Semana" [(ngModel)]="week" [ngModelOptions]="{standalone: true}">
+        <input mdbInput type="text" class="form-control mb-2" id="week" placeholder="Semana" [(ngModel)]="week" [ngModelOptions]="{standalone: true}">
       </div>
       <!-- Grid column -->
 
@@ -69,7 +68,7 @@
 
       <!-- Grid column -->
       <div class="col-auto">
-        <button type="submit" mdbBtn color="primary" class="mt-0" (click)="addData()">Añadir</button>
+        <button type="submit" mdbBtn color="primary" class="mt-0" (click)="addData()" >Añadir</button>
       </div>
 
       <div class="col-auto">

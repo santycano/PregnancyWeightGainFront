@@ -97,6 +97,8 @@ export class GraphComponent implements OnInit {
     }
     this.weeks.push(Number(this.week));
     this.inputdata.push(Number(this.weight) - this.preWeight);
+    this.week = '';
+    this.weight = '';
     if (this.begining){
       this.lineChartData.push({ data: this.inputdata, label: 'Datos del usuario', spanGaps: true});
       this.begining = false;
@@ -152,4 +154,5 @@ export class GraphComponent implements OnInit {
       });
     }
   }
+
 }

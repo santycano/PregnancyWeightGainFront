@@ -8,6 +8,7 @@ import { HeaderService } from '../service/header.service';
 })
 export class HeaderComponent implements OnInit {
   isLogin: boolean;
+
   constructor(private headerService: HeaderService) {
     this.isLogin = false;
   }

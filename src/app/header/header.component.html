@@ -1,25 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a routerLink="/"
-     class="navbar-brand">Curva adolescente</a>
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-      <a routerLink="/home"
-         class="nav-link active">Home</a>
-    </li>
-    <li class="nav-item">
-      <a routerLink="/graph"
-         class="nav-link active">Graph</a>
-    </li>
-  </ul>
-  <div *ngIf=" isLogin; else elseBlock">
-    <button routerLink="/logout"
-            class="nav-link btn-outline-dark">Log out</button>
-  </div>
-  <ng-template #elseBlock>
-    <button routerLink="/login"
-            class="nav-link btn-outline-dark mr-2">Login</button>
-    <button routerLink="/register"
-            class="nav-link btn-danger">Register</button>
-  </ng-template>
+<header class="h-100">
+  <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar intro-fixed-nav" [containerInside]="false">
+    <mdb-navbar-brand>
+      <a style="color: black" class="logo navbar-brand" href="#">
+        <strong>Curva adolescente</strong>
+      </a>
+    </mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active waves-light" mdbWavesEffect>
+          <a style="color: black" class="nav-link" routerLink="/home">Principal
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item waves-light" mdbWavesEffect>
+          <a style="color: black" class="nav-link" routerLink="/curve">Graficas</a>
+        </li>
+      </ul>
+      <div *ngIf=" isLogin; else elseBlock">
+        <button routerLink="/logout"
+                class="nav-link btn-outline-dark" style="background-color: transparent">Cerrar sesion</button>
+      </div>
+      <ng-template #elseBlock>
+        <button routerLink="/login"
+                class="nav-link btn-outline-dark mr-2" style="background-color: transparent">Ingresar</button>
+        <button routerLink="/register"
+                class="nav-link btn-danger">Registrarse</button>
+      </ng-template>
+    </links>
 
-</nav>
+  </mdb-navbar>
+  <!-- Main -->
+
+</header>
+<!--Main Navigation-->
+

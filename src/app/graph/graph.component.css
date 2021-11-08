@@ -1,5 +1,6 @@
 .body{
   align-content: center;
+  margin-top: 6%;
 }
 .inputdata{
   text-align: center;
@@ -9,7 +10,7 @@
 }
 .graphdiv{
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 15%;
   margin-right: -50%;
 }
