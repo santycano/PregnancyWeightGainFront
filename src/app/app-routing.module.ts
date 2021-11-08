@@ -8,7 +8,7 @@ import { HomeComponent } from './home/home.component';
 import {CurveComponent} from './curve/curve.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: '', component: HomeComponent },
   { path: 'graph', component: GraphComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
