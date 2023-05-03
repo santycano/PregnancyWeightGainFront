@@ -9,7 +9,7 @@ export class UserService {
   serverPrefix: string;
 
   constructor(private http: HttpClient) {
-    this.serverPrefix = 'https://api-rest-curva.herokuapp.com';
+    this.serverPrefix = 'https://pregnancy-weight-gain-back.vercel.app';
   }
 
   login(user: User) {
